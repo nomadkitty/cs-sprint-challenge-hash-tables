@@ -3,8 +3,19 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    # dict is the arr[0] values as key
+    # check following arrays if anything mathes key in dict
+    # if it does and it's not in the result yet, append to result
+    index = {}
+    result = []
+    for num in arrays[0]:
+        index[num] = 1
+    for arr in arrays[1:]:
+        for num in arr:
+            if num in index:
+                result.append(num)
 
-    return result
+    return list(set(result))
 
 
 if __name__ == "__main__":
